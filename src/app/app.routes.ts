@@ -11,5 +11,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/contact/contact.component')
       .then(m => m.ContactComponent)
   },
+  {
+    path: 'gallery',
+    loadComponent: () => import('./components/gallery/gallery.component')
+      .then(m => m.GalleryComponent)
+  },
   { path: '**', redirectTo: '' }
 ];
