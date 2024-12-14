@@ -1,16 +1,21 @@
 <section class="hero-section">
-    <div class="container">
-        <div class="row min-vh-100 align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4 fw-bold">Transform Your Space</h1>
-                <p class="lead">Create the home of your dreams with our expert interior design services</p>
-                <a routerLink="/contact" class="btn btn-primary btn-lg">Get Started</a>
-            </div>
-        </div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <button class="carousel-button prev" (click)="previousSlide()">❮</button>
+      <img [src]="images[currentIndex]" [alt]="'Slide ' + (currentIndex + 1)" class="carousel-image">
+      <button class="carousel-button next" (click)="nextSlide()">❯</button>
     </div>
+    <div class="carousel-indicators">
+      <button *ngFor="let image of images; let i = index" 
+              [class.active]="i === currentIndex"
+              (click)="currentIndex = i"
+              class="indicator-dot">
+      </button>
+    </div>
+  </div>
 </section>
 
-<section class="featured-projects py-5">
+<!-- <section class="featured-projects py-5">
     <div class="container">
         <h2 class="text-center mb-5">Featured Projects</h2>
         <div class="row g-4">
@@ -27,4 +32,4 @@
             }
         </div>
     </div>
-</section>
+</section> -->
