@@ -1,0 +1,24 @@
+
+<section class="gallery-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Gallery</h2>
+      <div class="gallery-grid">
+        @for (image of images; track image) {
+          <div class="gallery-item">
+            <img [src]="image" 
+                 alt="Interior Design" 
+                 (click)="onImageClick(image)"
+                 loading="lazy">
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+@if (showLightbox) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <span class="close-btn">&times;</span>
+      <img [src]="selectedImage" alt="Enlarged view">
+    </div>
+  }
