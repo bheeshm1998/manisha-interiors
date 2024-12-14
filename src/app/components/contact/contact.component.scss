@@ -1,0 +1,38 @@
+.contact-section {
+    padding-top: 80px;
+    background-color: #f8f9fa;
+
+    .contact-info {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+        i {
+            width: 25px;
+            color: #007bff;
+            margin-right: 10px;
+        }
+    }
+
+    .map-container {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .form-control {
+        &:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+    }
+
+    .btn-primary {
+        padding: 10px 30px;
+        
+        &:disabled {
+            opacity: 0.7;
+        }
+    }
+}

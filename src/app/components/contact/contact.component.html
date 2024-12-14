@@ -1,0 +1,65 @@
+<section class="contact-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" formControlName="name">
+                        @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
+                            <div class="text-danger">
+                                Please enter your name
+                            </div>
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                        @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
+                            <div class="text-danger">
+                                Please enter a valid email
+                            </div>
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="phone" formControlName="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5" formControlName="message"></textarea>
+                        @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+                            <div class="text-danger">
+                                Please enter your message
+                            </div>
+                        }
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-info mb-4">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> Write your email here &#64;</p>
+                </div>
+                
+                <!-- Google Maps -->
+                <!-- <div class="map-container">
+                    <google-map
+                        height="400px"
+                        width="100%"
+                        [center]="center"
+                        [zoom]="zoom"
+                        [options]="mapOptions">
+                        <map-marker
+                            [position]="center">
+                        </map-marker>
+                    </google-map>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
