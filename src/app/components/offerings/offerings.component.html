@@ -1,1 +1,17 @@
 <p>offerings works!</p>
+<section class="offerings-section">
+    <div class="container">
+      <h2 class="section-title">Our Offerings</h2>
+      <div class="offerings-grid">
+        @for (offering of offerings; track offering.caption) {
+          <div class="offering-item">
+            <img [src]="offering.image" [alt]="offering.caption">
+            <div class="overlay">
+              <h3>{{offering.caption}}</h3>
+              <p>{{offering.description}}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
