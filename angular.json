@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "watch": true,
+            "optimization": false,
+            "sourceMap": true,
             "outputPath": "dist/code",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -72,6 +75,10 @@
             "development": {
               "buildTarget": "code:build:development"
             }
+          },
+          "options": {
+            "watch": true,
+            "poll": 2000
           },
           "defaultConfiguration": "development"
         },
