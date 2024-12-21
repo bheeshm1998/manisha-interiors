@@ -17,11 +17,11 @@ export class GalleryComponent implements OnInit {
     // Add your image paths here
     this.images = [
       'assets/images/gallery/image_1.jpg',
-      'assets/images/gallery/image (2).jpg',
-      'assets/images/gallery/image (3).jpg',
-      'assets/images/gallery/image (4).jpg',
-      'assets/images/gallery/image (5).jpg',
-      'assets/images/gallery/image (6).jpg',
+      'assets/images/gallery/image_2.jpg',
+      'assets/images/gallery/image_3.jpg',
+      'assets/images/gallery/image_4.jpg',
+      'assets/images/gallery/image_5.jpg',
+      'assets/images/gallery/image_6.jpg',
       // Add more images as needed
     ];
   }
