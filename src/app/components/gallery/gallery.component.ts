@@ -14,7 +14,6 @@ export class GalleryComponent implements OnInit {
   showLightbox = false;
 
   ngOnInit() {
-    // Add your image paths here
     this.images = [
       'assets/images/gallery/image_1.jpg',
       'assets/images/gallery/image_2.jpg',
@@ -26,10 +25,8 @@ export class GalleryComponent implements OnInit {
     ];
   }
 
-  // Optional: Add method to handle image click for lightbox effect
   onImageClick(image: string) {
-    // Implement lightbox functionality if needed
-    console.log('Image clicked:', image);
+
   }
 
   openLightbox(image: string) {
