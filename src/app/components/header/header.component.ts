@@ -9,9 +9,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  isMenuOpen = false;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+
+  collapseNavbar() {
+    const navbar = document.getElementById('navbarNav');
+    if (navbar) {
+      navbar.classList.remove('show');
+    }
   }
 }
