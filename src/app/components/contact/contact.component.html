@@ -3,62 +3,61 @@
         <h2 class="text-center mb-5">Contact Us</h2>
         <div class="row">
             <div class="col-md-6">
-                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" formControlName="name">
-                        @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
-                            <div class="text-danger">
-                                Please enter your name
-                            </div>
-                        }
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" formControlName="email">
-                        @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
-                            <div class="text-danger">
-                                Please enter a valid email
-                            </div>
-                        }
-                    </div>
-                    <div class="mb-3">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" formControlName="phone">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" formControlName="message"></textarea>
-                        @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
-                            <div class="text-danger">
-                                Please enter your message
-                            </div>
-                        }
-                    </div>
-                    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
-                </form>
+                <div class="form-card">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" formControlName="name">
+                            @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
+                                <div class="text-danger">
+                                    Please enter your name
+                                </div>
+                            }
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email">
+                            @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
+                                <div class="text-danger">
+                                    Please enter a valid email
+                                </div>
+                            }
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" formControlName="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" formControlName="message"></textarea>
+                            @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+                                <div class="text-danger">
+                                    Please enter your message
+                                </div>
+                            }
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
+                    </form>
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="contact-info mb-4">
-                    <h3>Get in Touch</h3>
+                    <h3>Find us here</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City</p>
                     <p><i class="fas fa-phone"></i> +1 234 567 890</p>
                     <p><i class="fas fa-envelope"></i> Write your email here &#64;</p>
                 </div>
                 
-                <!-- Google Maps -->
-                <!-- <div class="map-container">
-                    <google-map
-                        height="400px"
-                        width="100%"
-                        [center]="center"
-                        [zoom]="zoom"
-                        [options]="mapOptions">
-                        <map-marker
-                            [position]="center">
-                        </map-marker>
-                    </google-map>
-                </div> -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5686.983155051135!2d78.26390160041797!3d17.5470958344192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf350ad4bf5c1%3A0xf8f5e83d70a3e895!2sManisha%20Interior!5e0!3m2!1sen!2sus!4v1734776674551!5m2!1sen!2sus" 
+                            width="100%"   
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </div>
     </div>
