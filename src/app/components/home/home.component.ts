@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   currentIndex = 0;
   private autoSlideInterval: any;
 
+
+
   aboutUsContent = ABOUT_US_CONTENT;
   projectsCompleted = 120; 
   teamMembers = 15;
@@ -31,6 +33,16 @@ export class HomeComponent implements OnInit {
       'assets/images/gallery/image_5.jpg',
       'assets/images/gallery/image_6.jpg',
     ];
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.cdRef.detectChanges();  // Manually trigger change detection
+  }
+
+  previousSlide() {
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+    this.cdRef.detectChanges();  // Manually trigger change detection
   }
 
 }
