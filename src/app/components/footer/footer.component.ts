@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { BUSINESS_EMAIL, BUSINESS_PHONE } from '../../shared/models/constants';
 
 @Component({
   selector: 'app-footer',
@@ -11,6 +12,9 @@ import { RouterLink } from '@angular/router';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
+
+  businessEmail: String = BUSINESS_EMAIL;
+  businessPhone: String = BUSINESS_PHONE;
   
   // Company working hours
   workingHours = [

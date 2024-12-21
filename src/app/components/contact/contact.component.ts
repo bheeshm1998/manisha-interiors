@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE } from '../../shared/models/constants';
 // import { GoogleMapsModule } from '@angular/google-maps';
 
 @Component({
@@ -12,6 +13,10 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+
+  businessEmail: String = BUSINESS_EMAIL;
+  businessPhone: String = BUSINESS_PHONE;
+  businessAddress: String = BUSINESS_ADDRESS
   
   // Google Maps configuration
   display: any;
