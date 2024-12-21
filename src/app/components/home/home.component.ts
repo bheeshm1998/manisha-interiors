@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
 
 
   aboutUsContent = ABOUT_US_CONTENT;
-  projectsCompleted = 120; 
-  teamMembers = 15;
+  projectsCompleted = 5; 
+  teamMembers = 8;
 
   constructor(private cdRef: ChangeDetectorRef) {}  // Inject ChangeDetectorRef
 

@@ -19,6 +19,8 @@
 
   .rights-reserved {
     font-size: 0.8em;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -34,5 +36,11 @@
     .contact-info {
       display: block;
     }
+  }
+
+  .rights-reserved {
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
   }
 }

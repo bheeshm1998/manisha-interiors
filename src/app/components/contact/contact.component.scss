@@ -1,8 +1,12 @@
 .contact-section {
-    background-color: #f8f9fa;
+    background-color: #fff8e6;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .container {
+        padding-top: 32px;
+    }
 
     .contact-info, .form-card {
         background-color: #f8f9fa;

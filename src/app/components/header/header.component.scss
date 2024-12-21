@@ -2,3 +2,31 @@
     width: 100%;
     display: flex;
 }
+
+nav {
+    background-color: #213037 !important;
+}
+
+.navbar {
+    background-color: #483d3c; /* Adjust as needed */
+  }
+  
+  .nav-link {
+    color: #ffffff !important; /* Default color */
+  
+    &.active {
+      color: #cc8f69 !important; /* Light brown color when active */
+    }
+  
+    &:hover {
+      color: #ddb39a !important; /* Light brown color on hover */
+    }
+  }
+  
+  .navbar-brand, .navbar-toggler {
+    color: #ffffff !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
