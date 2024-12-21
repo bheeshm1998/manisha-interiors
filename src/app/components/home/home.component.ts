@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';  // Import ChangeDetectorRef
+import { ABOUT_US_CONTENT } from '../../shared/models/constants';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   images: string[] = [];
   currentIndex = 0;
   private autoSlideInterval: any;
+
+  aboutUsContent = ABOUT_US_CONTENT;
+  projectsCompleted = 120; 
+  teamMembers = 15;
 
   constructor(private cdRef: ChangeDetectorRef) {}  // Inject ChangeDetectorRef
 

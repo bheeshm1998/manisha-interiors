@@ -72,3 +72,31 @@
     background: white;
   }
 }
+
+.about-us {
+  padding: 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  background-color: brown;
+  color: white;
+  padding: 20px;
+}
+
+.stat-block {
+  text-align: center;
+}
+
+.stat-block h3 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.stat-block p {
+  margin: 0;
+  font-size: 1.2em;
+}
