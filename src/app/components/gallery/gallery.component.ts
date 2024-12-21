@@ -16,7 +16,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     // Add your image paths here
     this.images = [
-      'assets/images/gallery/image (1).jpg',
+      'assets/images/gallery/image_1.jpg',
       'assets/images/gallery/image (2).jpg',
       'assets/images/gallery/image (3).jpg',
       'assets/images/gallery/image (4).jpg',
