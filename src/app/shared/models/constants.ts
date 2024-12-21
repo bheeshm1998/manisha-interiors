@@ -7,7 +7,7 @@ export const CONTACT_MESSAGE = 'write you message here';
 export const BUSINESS_NAME = 'Manisha Interiors';
 export const BUSINESS_ADDRESS = 'APR, Villa-115, Praveens Luxuria, beside GMR Convention Centre, APR Nagar, Patancheruvu, Hyderabad, Telanagana, 502319';
 export const BUSINESS_PHONE = '7680882546';
-export const BUSINESS_EMAIL = 'manisha-interiors@gmail.com';
+export const BUSINESS_EMAIL = 'manisha.interiors@gmail.com';
 
 
 
