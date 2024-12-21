@@ -1,225 +1,38 @@
 .footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    margin-top: auto; // Helps stick footer to bottom
-    
-    // Footer Top Section
-    .footer-top {
-      padding: 70px 0 40px;
-      
-      @media (max-width: 768px) {
-        padding: 40px 0 20px;
-      }
-    }
-  
-    // Widget Styling
-    .footer-widget {
-      margin-bottom: 30px;
-  
-      h4 {
-        color: #e67e22;
-        font-size: 1.25rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        position: relative;
-        padding-bottom: 10px;
-  
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 30px;
-          height: 2px;
-          background-color: #e67e22;
-        }
-      }
-  
-      p {
-        color: #bdc3c7;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-    }
-  
-    // Social Links
-    .social-links {
-      display: flex;
-      gap: 15px;
-  
-      a {
-        color: #ecf0f1;
-        background-color: rgba(236, 240, 241, 0.1);
-        width: 36px;
-        height: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-  
-        &:hover {
-          background-color: #e67e22;
-          color: #fff;
-          transform: translateY(-3px);
-        }
-      }
-    }
-  
-    // Footer Links
-    .footer-links {
-      list-style: none;
-      padding: 0;
+  background-color: #483d3c;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+
+  .contact-us {
+    margin-bottom: 10px;
+
+    p {
       margin: 0;
-  
-      li {
-        margin-bottom: 12px;
-  
-        a {
-          color: #bdc3c7;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          display: inline-block;
-  
-          &:hover {
-            color: #e67e22;
-            padding-left: 5px;
-          }
-        }
-      }
+      white-space: nowrap; /* Prevent breaking */
     }
-  
-    // Working Hours
-    .working-hours {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-  
-      li {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        color: #bdc3c7;
-  
-        .day {
-          font-weight: 500;
-        }
-  
-        .hours {
-          color: #e67e22;
-        }
-      }
-    }
-  
-    // Contact Info
+
     .contact-info {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-  
-      li {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        color: #bdc3c7;
-  
-        i {
-          color: #e67e22;
-          margin-right: 10px;
-          margin-top: 5px;
-        }
-  
-        span {
-          line-height: 1.6;
-        }
-      }
-    }
-  
-    // Footer Bottom
-    .footer-bottom {
-      background-color: rgba(0, 0, 0, 0.2);
-      padding: 20px 0;
-  
-      .copyright {
-        margin: 0;
-        color: #bdc3c7;
-        font-size: 0.9rem;
-      }
-  
-      .footer-bottom-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-end;
-        gap: 20px;
-  
-        @media (max-width: 768px) {
-          justify-content: center;
-          margin-top: 15px;
-        }
-  
-        li {
-          a {
-            color: #bdc3c7;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-  
-            &:hover {
-              color: #e67e22;
-            }
-          }
-        }
-      }
+      display: inline;
     }
   }
-  
-  // Make footer stick to bottom
-  :host {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+  .rights-reserved {
+    font-size: 0.8em;
   }
-  
-  // Responsive Adjustments
-  @media (max-width: 768px) {
-    .footer {
-      .footer-widget {
-        text-align: center;
-  
-        h4::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-  
-      .social-links {
-        justify-content: center;
-      }
-  
-      .working-hours li {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-      }
-  
-      .contact-info li {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-  
-        i {
-          margin-bottom: 5px;
-        }
-      }
-  
-      .footer-bottom {
-        text-align: center;
-  
-        .copyright {
-          margin-bottom: 10px;
-        }
-      }
+}
+
+@media (max-width: 768px) {
+  .contact-us {
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: normal; /* Allow breaking on small screens */
+    }
+
+    .contact-info {
+      display: block;
     }
   }
+}
