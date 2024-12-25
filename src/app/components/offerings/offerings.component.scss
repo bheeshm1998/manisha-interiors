@@ -8,6 +8,11 @@
       color: #2c3e50;
       font-size: 2.5rem;
     }
+
+    .container{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
   }
   
   .offerings-grid {
@@ -33,7 +38,7 @@
       .overlay {
         opacity: 1;
         
-        h3 {
+        h4 {
           transform: translateY(0);
         }
         
@@ -68,10 +73,10 @@
       padding: 20px;
       transition: opacity 0.3s ease;
   
-      h3 {
+      h4 {
         color: white;
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         font-weight: 600;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         transform: translateY(20px);
@@ -115,8 +120,8 @@
       .overlay {
         opacity: 1; // Always show overlay on mobile
         
-        h3 {
-          font-size: 1.25rem;
+        h4 {
+          font-size: 1.1rem;
           transform: translateY(0);
         }
         

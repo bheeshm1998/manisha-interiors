@@ -19,12 +19,12 @@ export class OfferingsComponent {
     {
       image: 'assets/images/offerings/painting.jpg',
       caption: 'Artistic Wall Transformations',
-      description: 'Add life to your spaces with our expert painting and wall finishing services"'
+      description: 'Expert painting and wall finishing services"'
     },
     {
       image: 'assets/images/offerings/refurbishment.jpg',
       caption: 'Complete Space Makeovers',
-      description: 'Breathe new life into your existing spaces with our comprehensive refurbishment services"'
+      description: 'Comprehensive refurbishment services"'
     },
     {
       image: 'assets/images/offerings/bedroom-design.jpg',
@@ -34,7 +34,7 @@ export class OfferingsComponent {
     {
       image: 'assets/images/offerings/bathroom-design.jpg',
       caption: 'Bathroom Design',
-      description: 'Luxury bathroom designs that combine style and functionality'
+      description: 'Luxury bathroom designs that combine style & functionality'
     },
     {
       image: 'assets/images/offerings/wardrobe-design.jpg',
@@ -44,12 +44,12 @@ export class OfferingsComponent {
     {
       image: 'assets/images/offerings/window-design.jpg',
       caption: 'Window Design',
-      description: 'Frame your views perfectly with our custom window solutions and treatments'
+      description: 'Custom window solutions and treatments'
     },
     {
       image: 'assets/images/offerings/flooring.jpg',
       caption: 'Premium Flooring Solutions',
-      description: 'Foundation of beauty with our wide range of flooring options from hardwood to designer tiles'
+      description: 'Wide range of flooring options from hardwood to designer tiles'
     }
   ];
 }
