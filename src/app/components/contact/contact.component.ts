@@ -23,9 +23,9 @@ export class ContactComponent {
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      from_name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: [''],
+      from_name: ['', [Validators.required]],
+      email: ['', Validators.email],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       message: ['', Validators.required]
     });
   }
