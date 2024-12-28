@@ -14,4 +14,10 @@ export class FooterComponent {
   businessEmail: String = BUSINESS_EMAIL;
   businessPhone: String = BUSINESS_PHONE;
 
+  copyrightYear: Number = new Date().getFullYear()
+
+    constructor() {
+
+    }
+
 }
