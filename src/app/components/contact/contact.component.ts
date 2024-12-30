@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE } from '../../shared/models/constants';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE, EMAIL_JS_PUBLIC_KEY, EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID } from '../../shared/models/constants';
 
 
 @Component({
@@ -22,9 +23,9 @@ export class ContactComponent {
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: [''],
+      from_name: ['', [Validators.required]],
+      email: ['', Validators.email],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       message: ['', Validators.required]
     });
   }
@@ -32,6 +33,21 @@ export class ContactComponent {
   onSubmit() {
     if (this.contactForm.valid) {
       console.log(this.contactForm.value);
+    }
+  }
+
+  public sendEmail(e: Event) {
+    e.preventDefault();
+    if (this.contactForm.valid) {
+      emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, this.contactForm.value, EMAIL_JS_PUBLIC_KEY)
+        .then((result: EmailJSResponseStatus) => {
+          console.log(result.text);
+          alert('Message sent successfully!');
+          this.contactForm.reset();
+        }, (error) => {
+          console.log(error.text);
+          alert('Failed to send message. Please try again later.');
+        });
     }
   }
 }

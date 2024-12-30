@@ -1,48 +1,61 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { ChangeDetectorRef } from '@angular/core';  // Import ChangeDetectorRef
-import { ABOUT_US_CONTENT, API_KEY } from '../../shared/models/constants';
+import { interval, Subscription } from 'rxjs';
+import { ABOUT_US_CONTENT } from '../../shared/models/constants';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   images: string[] = [];
   currentIndex = 0;
-  private autoSlideInterval: any;
-
-
+  private autoSlideSubscription!: Subscription;
 
   aboutUsContent = ABOUT_US_CONTENT;
-  projectsCompleted = 5; 
+  projectsCompleted = 5;
   teamMembers = 8;
 
-  constructor(private cdRef: ChangeDetectorRef) {}  // Inject ChangeDetectorRef
-
-  ngOnInit() {
+  constructor(private ngZone: NgZone) {
     this.images = [
-      'assets/images/gallery/image_1.jpg',
-      'assets/images/gallery/image_2.jpg',
-      'assets/images/gallery/image_3.jpg',
-      'assets/images/gallery/image_4.jpg',
-      'assets/images/gallery/image_5.jpg',
-      'assets/images/gallery/image_6.jpg',
+      'assets/images/carousel/image_1.jpg',
+      'assets/images/carousel/image_2.jpg',
+      'assets/images/carousel/image_3.jpg',
+      'assets/images/carousel/image_4.jpg',
+      'assets/images/carousel/image_5.jpg',
+      'assets/images/carousel/image_6.jpg',
     ];
   }
 
-  nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.cdRef.detectChanges();  // Manually trigger change detection
+  ngOnInit(): void {
+    // Start the auto-slide within Angular's NgZone
+    this.ngZone.runOutsideAngular(() => {
+      this.autoSlideSubscription = interval(3000).subscribe(() => {
+        this.ngZone.run(() => {
+          this.nextSlide();
+        });
+      });
+    });
   }
 
-  previousSlide() {
-    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    this.cdRef.detectChanges();  // Manually trigger change detection
+  nextSlide(): void {
+    if (this.images.length > 0) {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }
   }
 
+  previousSlide(): void {
+    if (this.images.length > 0) {
+      this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.autoSlideSubscription) {
+      this.autoSlideSubscription.unsubscribe();
+    }
+  }
 }

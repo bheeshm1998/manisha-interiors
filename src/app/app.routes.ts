@@ -22,7 +22,7 @@ export const routes: Routes = [
         .then(m => m.GalleryComponent)
     },
     {
-        path: 'offerings',
+        path: 'services',
         loadComponent: () => import('./components/offerings/offerings.component')
         .then(m => m.OfferingsComponent)
     },
