@@ -1,17 +1,18 @@
-
 <section class="offerings-section">
-    <div class="container">
-      <h3 class="text-center mb-5">Our Services</h3>
-      <div class="offerings-grid">
-        @for (offering of offerings; track offering.caption) {
-          <div class="offering-item">
-            <img [src]="offering.image" [alt]="offering.caption">
-            <div class="overlay">
-              <h4>{{offering.caption}}</h4>
-              <p>{{offering.description}}</p>
-            </div>
-          </div>
-        }
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2>Our Services</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="offerings-grid">
+    @for (offering of offerings; track offering.caption) {
+      <div class="offering-item">
+        <img [src]="offering.image" [alt]="offering.caption" loading="lazy">
+        <div class="overlay">
+          <h4>{{ offering.caption }}</h4>
+          <p>{{ offering.description }}</p>
+        </div>
       </div>
-    </div>
-  </section>
+    }
+  </div>
+</section>

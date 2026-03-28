@@ -1,49 +1,59 @@
 <section class="hero-section">
   <div class="carousel-container">
     <div class="carousel">
-      <button class="carousel-button prev" (click)="previousSlide()">❮</button>
-      <img [src]="images[currentIndex]" [alt]="'Slide ' + (currentIndex + 1)" class="carousel-image" loading="lazy">
-      <button class="carousel-button next" (click)="nextSlide()">❯</button>
+      <button class="carousel-button prev" (click)="previousSlide()" aria-label="Previous slide">&#8249;</button>
+      <img [src]="images[currentIndex]" [alt]="'Interior design slide ' + (currentIndex + 1)" class="carousel-image">
+      <button class="carousel-button next" (click)="nextSlide()" aria-label="Next slide">&#8250;</button>
     </div>
     <div class="carousel-indicators">
-      <button *ngFor="let image of images; let i = index" 
+      <button *ngFor="let image of images; let i = index"
               [class.active]="i === currentIndex"
               (click)="currentIndex = i"
-              class="indicator-dot">
+              class="indicator-dot"
+              [attr.aria-label]="'Go to slide ' + (i + 1)">
       </button>
     </div>
   </div>
+</section>
 
-  <section class="about-us">
-    <h3>About Us</h3>
+<section class="hero-intro">
+  <h1 class="hero-title">Manisha Interiors</h1>
+  <p class="hero-tagline">{{ currentTagline }}</p>
+  <a routerLink="/contact" class="hero-cta">Get in Touch</a>
+</section>
+
+<section class="about-us">
+  <div class="about-content">
+    <div class="section-label">Who We Are</div>
+    <h2>Crafting Beautiful Spaces</h2>
+    <div class="section-divider"></div>
     <p>{{ aboutUsContent }}</p>
-  </section>
+  </div>
+</section>
 
-  <section class="statistics">
-    <div class="stat-block">
-      <h3>{{ projectsCompleted }}</h3>
-      <p>Projects Completed</p>
-    </div>
-    <div class="stat-block">
-      <h3>{{ teamMembers }}</h3>
-      <p>Team Members</p>
-    </div>
-  </section>
+<section class="statistics">
+  <div class="stat-block">
+    <span class="stat-number">{{ projectsCompleted }}+</span>
+    <span class="stat-label">Projects Completed</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-block">
+    <span class="stat-number">{{ teamMembers }}+</span>
+    <span class="stat-label">Expert Team Members</span>
+  </div>
+</section>
 
-  <section class="location">
-    <h3>Our Location</h3>
-
-    <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5686.983155051135!2d78.26390160041797!3d17.5470958344192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf350ad4bf5c1%3A0xf8f5e83d70a3e895!2sManisha%20Interior!5e0!3m2!1sen!2sus!4v1734776674551!5m2!1sen!2sus" 
-            width="600"   
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+<section class="location">
+  <div class="section-label">Find Us</div>
+  <h2>Our Location</h2>
+  <div class="section-divider"></div>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5686.983155051135!2d78.26390160041797!3d17.5470958344192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf350ad4bf5c1%3A0xf8f5e83d70a3e895!2sManisha%20Interior!5e0!3m2!1sen!2sus!4v1734776674551!5m2!1sen!2sus"
+      title="Manisha Interiors location map"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-  </div> 
-
-  </section>
-
+  </div>
 </section>

@@ -1,16 +1,81 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* ── Palette ── */
+  --cherry-blossom: #edafb8;
+  --powder-petal:   #f7e1d7;
+  --dust-grey:      #dedbd2;
+  --ash-grey:       #b0c4b1;
+  --iron-grey:      #4a5759;
+
+  /* ── Semantic tokens ── */
+  --color-primary:      #4a5759;   /* iron-grey  – nav, footer, dark sections, headings */
+  --color-accent:       #edafb8;   /* cherry-blossom – buttons, active links, dividers  */
+  --color-accent-light: #f7e1d7;   /* powder-petal – light backgrounds, overlay tints   */
+  --color-bg:           #dedbd2;   /* dust-grey – universal page background             */
+  --color-bg-warm:      #f7e1d7;   /* powder-petal section backgrounds                  */
+  --color-bg-muted:     #dedbd2;   /* dust-grey section backgrounds                     */
+  --color-soft:         #b0c4b1;   /* ash-grey – borders, placeholders                  */
+  --color-text:         #4a5759;   /* iron-grey body text                               */
+  --color-text-muted:   rgba(74, 87, 89, 0.60);
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: 66px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: var(--font-body);
+}
+
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 14px auto 28px;
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.5rem; }
+
+  .section-divider {
+    margin: 10px auto 20px;
   }
-  
-  app-root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
+}

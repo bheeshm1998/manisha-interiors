@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE, EMAIL_JS_PUBLIC_KEY, EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID } from '../../shared/models/constants';
 
-
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -17,9 +16,7 @@ export class ContactComponent {
 
   businessEmail: String = BUSINESS_EMAIL;
   businessPhone: String = BUSINESS_PHONE;
-  businessAddress: String = BUSINESS_ADDRESS
-  
-  display: any;
+  businessAddress: String = BUSINESS_ADDRESS;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -30,22 +27,14 @@ export class ContactComponent {
     });
   }
 
-  onSubmit() {
-    if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-    }
-  }
-
   public sendEmail(e: Event) {
     e.preventDefault();
     if (this.contactForm.valid) {
       emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, this.contactForm.value, EMAIL_JS_PUBLIC_KEY)
-        .then((result: EmailJSResponseStatus) => {
-          console.log(result.text);
+        .then((_result: EmailJSResponseStatus) => {
           alert('Message sent successfully!');
           this.contactForm.reset();
-        }, (error) => {
-          console.log(error.text);
+        }, (_error: any) => {
           alert('Failed to send message. Please try again later.');
         });
     }

@@ -1,135 +1,103 @@
 .offerings-section {
-    padding: 80px 0;
-    background-color: #fff8e6;
-  
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-      color: #2c3e50;
-      font-size: 2.5rem;
-    }
+  padding: 88px 20px;
+  background-color: var(--color-bg-muted);
 
-    .container{
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+  @media (max-width: 768px) {
+    padding: 52px 16px;
   }
-  
-  .offerings-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 columns for PC
-    gap: 25px;
-    padding: 0 15px;
-  
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr; // 1 column for mobile
-      gap: 20px;
-    }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0;
   }
-  
-  .offering-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    aspect-ratio: 16/9; // Forces landscape mode
-    
-    &:hover {
-      .overlay {
-        opacity: 1;
-        
-        h4 {
-          transform: translateY(0);
-        }
-        
-        p {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-    }
-  
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+  @media (max-width: 768px) {
+    margin-bottom: 28px;
+  }
+}
+
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.offering-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 20px rgba(74, 87, 89, 0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(74, 87, 89, 0.05) 0%, rgba(74, 87, 89, 0.78) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+
+    h4 {
+      color: #fff;
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      transform: translateY(6px);
       transition: transform 0.3s ease;
     }
-  
+
+    p {
+      color: var(--color-accent-light);
+      margin: 8px 0 0;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      transform: translateY(8px);
+      opacity: 0;
+      transition: transform 0.3s ease 0.05s, opacity 0.3s ease 0.05s;
+    }
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
     .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.7)
-      );
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px;
-      transition: opacity 0.3s ease;
-  
-      h4 {
-        color: white;
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        transform: translateY(20px);
-        transition: transform 0.3s ease;
-      }
-  
-      p {
-        color: rgba(255, 255, 255, 0.9);
-        margin: 10px 0 0;
-        font-size: 1rem;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        transform: translateY(20px);
-        opacity: 0;
-        transition: all 0.3s ease 0.1s;
-      }
+      h4 { transform: translateY(0); }
+      p { transform: translateY(0); opacity: 1; }
     }
   }
-  
-  // Add hover effects for desktop only
-  @media (min-width: 769px) {
-    .offering-item {
-      &:hover {
-        img {
-          transform: scale(1.05);
-        }
-      }
-    }
+}
+
+@media (max-width: 768px) {
+  .offering-item .overlay {
+    h4 { transform: translateY(0); }
+    p { transform: translateY(0); opacity: 1; }
   }
-  
-  // Additional mobile optimizations
-  @media (max-width: 768px) {
-    .offerings-section {
-      
-      .section-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-      }
-    }
-  
-    .offering-item {
-      .overlay {
-        opacity: 1; // Always show overlay on mobile
-        
-        h4 {
-          font-size: 1.1rem;
-          transform: translateY(0);
-        }
-        
-        p {
-          font-size: 0.9rem;
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-    }
-  }
+}

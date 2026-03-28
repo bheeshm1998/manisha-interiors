@@ -21,12 +21,7 @@ export class GalleryComponent implements OnInit {
       'assets/images/gallery/image_4.jpg',
       'assets/images/gallery/image_5.jpg',
       'assets/images/gallery/image_6.jpg',
-      // Add more images as needed
     ];
-  }
-
-  onImageClick(image: string) {
-
   }
 
   openLightbox(image: string) {
@@ -38,5 +33,4 @@ export class GalleryComponent implements OnInit {
     this.selectedImage = null;
     this.showLightbox = false;
   }
-
 }

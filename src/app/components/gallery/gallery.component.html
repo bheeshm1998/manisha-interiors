@@ -1,24 +1,24 @@
-
 <section class="gallery-section">
-    <div class="container">
-      <h3 class="text-center mb-5">Gallery</h3>
-      <div class="gallery-grid">
-        @for (image of images; track image) {
-          <div class="gallery-item">
-            <img [src]="image" 
-                 alt="Interior Design" 
-                 (click)="onImageClick(image)"
-                 >
-          </div>
-        }
+  <div class="section-header">
+    <div class="section-label">Our Work</div>
+    <h2>Gallery</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="gallery-grid">
+    @for (image of images; track image) {
+      <div class="gallery-item" (click)="openLightbox(image)">
+        <img [src]="image" alt="Interior design work" loading="lazy">
+        <div class="gallery-overlay">
+          <i class="fas fa-expand-alt"></i>
+        </div>
       </div>
-    </div>
-  </section>
+    }
+  </div>
+</section>
 
-  <!-- Lightbox -->
 @if (showLightbox) {
-    <div class="lightbox" (click)="closeLightbox()">
-      <span class="close-btn">&times;</span>
-      <img [src]="selectedImage" alt="Enlarged view">
-    </div>
-  }
+  <div class="lightbox" (click)="closeLightbox()">
+    <button class="close-btn" aria-label="Close lightbox">&times;</button>
+    <img [src]="selectedImage" alt="Interior design enlarged view">
+  </div>
+}

@@ -1,147 +1,268 @@
+/* ── Hero / Carousel ── */
+.hero-section {
+  position: relative;
+}
+
 .carousel-container {
   position: relative;
-  width: calc(100% - 10px);
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 20px;
+  width: 100%;
   overflow: hidden;
 }
 
 .carousel {
   position: relative;
   width: 100%;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  height: 580px;
 
-@media (max-width: 768px) {
-  .carousel {
-    height: 320px; /* Height for mobile */
+  @media (max-width: 768px) {
+    height: 340px;
   }
 }
 
 .carousel-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(74, 87, 89, 0.45);
   color: white;
-  border: none;
-  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   z-index: 2;
-  transition: background-color 0.3s;
+  transition: background 0.2s, color 0.2s;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(237, 175, 184, 0.9);
+    color: var(--color-primary);
   }
 
-  &.prev {
-    left: 1rem;
-  }
+  &.prev { left: 1.5rem; }
+  &.next { right: 1.5rem; }
 
-  &.next {
-    right: 1rem;
+  @media (max-width: 768px) {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+
+    &.prev { left: 0.75rem; }
+    &.next { right: 0.75rem; }
   }
 }
 
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  padding-left: 0;
-  margin-left: 0;
-  list-style: none;
+  align-items: center;
   gap: 8px;
+  z-index: 2;
 }
 
 .indicator-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
   cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, border-color 0.2s;
 
   &.active {
-    background: white;
-  }
-}
-
-.about-us {
-  padding: 20px;
-  background-color: #f8f9fa;
-  text-align: center;
-
-  p {
-    margin: auto;
-    width: 80%;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   @media (max-width: 768px) {
-    p {
-      width: 100%;
-    }
-    
+    width: 12px;
+    height: 12px;
   }
 }
 
+/* ── Hero Intro Band ── */
+.hero-intro {
+  background-color: var(--color-primary);
+  text-align: center;
+  padding: 52px 24px;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--color-accent-light);
+    margin-bottom: 28px;
+    min-height: 1.6rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    padding: 13px 36px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 2px solid var(--color-accent);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+
+    &:hover {
+      background: transparent;
+      color: var(--color-accent-light);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ── About Us ── */
+.about-us {
+  background-color: var(--color-bg);
+  padding: 88px 20px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 52px 20px;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.2rem;
+      color: var(--color-primary);
+      margin-bottom: 0;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+  }
+}
+
+/* ── Statistics ── */
 .statistics {
   display: flex;
-  justify-content: space-around;
-  background-color: #4f473e;
-  color: white;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-muted);
+  padding: 64px 40px;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 36px;
+    padding: 48px 20px;
+  }
+}
+
+.stat-divider {
+  width: 1px;
+  height: 64px;
+  background: rgba(74, 87, 89, 0.25);
+  margin: 0 72px;
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 }
 
 .stat-block {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
 }
 
-.stat-block h3 {
-  margin: 0;
-  font-size: 2em;
-}
-
-.stat-block p {
-  margin: 0;
-  font-size: 1.2em;
-}
-
+/* ── Location ── */
 .location {
-  padding: 20px;
+  padding: 88px 20px;
   text-align: center;
+  background: var(--color-bg);
 
-  // #map {
-  //   width: 100%;
-  //   height: 400px;
-  // }
+  @media (max-width: 768px) {
+    padding: 52px 20px;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-bottom: 0;
+  }
 
   .map-container {
-    width: 100%;
-    height: 450px;
+    max-width: 920px;
     margin: 0 auto;
-  }
+    height: 420px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(74, 87, 89, 0.12);
 
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-}
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
 
-.hero-section, .about-us {
-  background-color: #fff8e6;
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+  }
 }
