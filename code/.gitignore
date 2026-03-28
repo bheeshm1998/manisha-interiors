@@ -1,11 +1,13 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
 # Compiled output
-code/dist
-code/tmp
-code/out-tsc
-code/bazel-out
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
 # Node
-code/node_modules
+/node_modules
 npm-debug.log
 yarn-error.log
 
@@ -27,17 +29,13 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-code/.angular/
+/.angular/cache
 .sass-cache/
-code/connect.lock
-code/coverage
+/connect.lock
+/coverage
 /libpeerconnection.log
 testem.log
-code/typings
-
-# Claude & tooling
-.claude/
-.playwright-mcp/
+/typings
 
 # System files
 .DS_Store
